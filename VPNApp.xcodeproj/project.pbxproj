@@ -13,8 +13,8 @@
 		5FBA71ED284550B8002983E9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA71EC284550B8002983E9 /* FirstViewController.swift */; };
 		5FBA71F2284550BD002983E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FBA71F1284550BD002983E9 /* Assets.xcassets */; };
 		5FBA71F5284550BD002983E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBA71F3284550BD002983E9 /* LaunchScreen.storyboard */; };
-		5FD42188284606D100F15FB7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD42187284606D100F15FB7 /* MainViewController.swift */; };
-		5FD4218A28460DEA00F15FB7 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD4218928460DEA00F15FB7 /* MainTableViewCell.swift */; };
+		5FD42188284606D100F15FB7 /* SelectServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD42187284606D100F15FB7 /* SelectServerViewController.swift */; };
+		5FD4218A28460DEA00F15FB7 /* SelectServerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD4218928460DEA00F15FB7 /* SelectServerTableViewCell.swift */; };
 		5FD4218C28460E1100F15FB7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD4218B28460E1100F15FB7 /* NetworkService.swift */; };
 		5FD4218E28460E5200F15FB7 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD4218D28460E5200F15FB7 /* SearchResponse.swift */; };
 		5FD4219228464FCC00F15FB7 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD4219128464FCC00F15FB7 /* CustomView.swift */; };
@@ -30,8 +30,8 @@
 		5FBA71F1284550BD002983E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FBA71F4284550BD002983E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FBA71F6284550BD002983E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FD42187284606D100F15FB7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		5FD4218928460DEA00F15FB7 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		5FD42187284606D100F15FB7 /* SelectServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectServerViewController.swift; sourceTree = "<group>"; };
+		5FD4218928460DEA00F15FB7 /* SelectServerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectServerTableViewCell.swift; sourceTree = "<group>"; };
 		5FD4218B28460E1100F15FB7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5FD4218D28460E5200F15FB7 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		5FD4219128464FCC00F15FB7 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		5FD4218F28461F2C00F15FB7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				5FD4218928460DEA00F15FB7 /* MainTableViewCell.swift */,
+				5FD4218928460DEA00F15FB7 /* SelectServerTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				5FBA71EC284550B8002983E9 /* FirstViewController.swift */,
-				5FD42187284606D100F15FB7 /* MainViewController.swift */,
+				5FD42187284606D100F15FB7 /* SelectServerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -287,11 +287,11 @@
 				5FD4218E28460E5200F15FB7 /* SearchResponse.swift in Sources */,
 				5FD4219228464FCC00F15FB7 /* CustomView.swift in Sources */,
 				5FBA71ED284550B8002983E9 /* FirstViewController.swift in Sources */,
-				5FD42188284606D100F15FB7 /* MainViewController.swift in Sources */,
+				5FD42188284606D100F15FB7 /* SelectServerViewController.swift in Sources */,
 				5FBA71E9284550B8002983E9 /* AppDelegate.swift in Sources */,
 				5FD4218C28460E1100F15FB7 /* NetworkService.swift in Sources */,
 				5FBA71EB284550B8002983E9 /* SceneDelegate.swift in Sources */,
-				5FD4218A28460DEA00F15FB7 /* MainTableViewCell.swift in Sources */,
+				5FD4218A28460DEA00F15FB7 /* SelectServerTableViewCell.swift in Sources */,
 				5FB09572284CE1C400337C7B /* MainViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

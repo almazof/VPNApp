@@ -11,7 +11,7 @@ protocol MainViewPresenterProtocol: AnyObject {
     func reloadData(string: String)
 }
 
-typealias MainViewPresenterDelegate = MainViewPresenterProtocol & MainViewController
+typealias MainViewPresenterDelegate = MainViewPresenterProtocol & SelectServerViewController
 
 class MainViewPresenter {
     weak var delegate: MainViewPresenterDelegate?

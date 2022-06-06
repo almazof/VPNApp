@@ -12,8 +12,8 @@ class CustomView: UIView {
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .systemBackground
-        imageView.layer.cornerRadius = 15
+        imageView.backgroundColor = .clear
+        imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
