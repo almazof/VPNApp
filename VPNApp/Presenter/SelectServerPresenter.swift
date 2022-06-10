@@ -1,5 +1,5 @@
 //
-//  MainViewPresenter.swift
+//  SelectServerPresenter.swift
 //  VPNApp
 //
 //  Created by Jafar on 05.06.2022.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol MainViewPresenterProtocol: AnyObject {
+protocol SelectServerPresenterProtocol: AnyObject {
     func reloadData(string: String)
 }
 
-typealias MainViewPresenterDelegate = MainViewPresenterProtocol & SelectServerViewController
+typealias MainViewPresenterDelegate = SelectServerPresenterProtocol & SelectServerViewController
 
-class MainViewPresenter {
+class SelectServerPresenter {
     weak var delegate: MainViewPresenterDelegate?
         
     private func loading(indexPath: IndexPath) {
@@ -22,7 +22,7 @@ class MainViewPresenter {
 }
 
 //MARK: - View
-extension MainViewPresenter {
+extension SelectServerPresenter {
     //MARK: - Input
     open func update(indexPath: IndexPath) {
         loading(indexPath: indexPath)

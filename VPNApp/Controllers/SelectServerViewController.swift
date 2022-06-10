@@ -8,9 +8,10 @@
 import UIKit
 import SDWebImage
 
+
 class SelectServerViewController: UIViewController {
     
-    private let presenter = MainViewPresenter()
+    private let presenter = SelectServerPresenter()
     private var myTableView = UITableView()
     let networkService = NetworkService()
     var searchResponse: SearchResponse? = nil
@@ -39,11 +40,14 @@ class SelectServerViewController: UIViewController {
     }
 }
 
+
 extension SelectServerViewController {
+    
     
     private func setup() {
         setupTableView()
     }
+    
     private func setupTableView() {
         myTableView.dataSource = self
         myTableView.delegate = self
@@ -55,9 +59,9 @@ extension SelectServerViewController {
         myTableView.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
         
         myTableView.separatorStyle = .none
-        myTableView.verticalScrollIndicatorInsets = .zero
         
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 110))
+        header.translatesAutoresizingMaskIntoConstraints = false
         myTableView.tableHeaderView = header
         header.backgroundColor = .clear
         let headerView = UIView()
@@ -68,12 +72,16 @@ extension SelectServerViewController {
         headerView2.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            
+            header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            header.heightAnchor.constraint(equalToConstant: 110),
+            
+            
             headerView.leadingAnchor.constraint(equalTo: header.leadingAnchor, constant: 15),
             headerView.trailingAnchor.constraint(equalTo: header.trailingAnchor, constant: -15),
             headerView.topAnchor.constraint(equalTo: header.topAnchor, constant: 15),
-            //            headerView.bottomAnchor.constraint(equalTo: header.bottomAnchor, constant: -16),
-            headerView.heightAnchor.constraint(equalToConstant: 65),
-            
+            headerView.heightAnchor.constraint(equalToConstant: 70),
             
             headerView2.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
             headerView2.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
@@ -99,7 +107,7 @@ extension SelectServerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! SelectServerTableViewCell
         let topic = searchResponse?.result?[indexPath.section]
-                cell.topicNameLabel.text = topic?.country
+        cell.topicNameLabel.text = topic?.country
         cell.textLabel!.textAlignment = NSTextAlignment.center
         cell.topicPhoto.sd_setImage(with: URL(string: topic?.image ?? ""), completed: nil)
         cell.backgroundColor = .white
@@ -116,7 +124,8 @@ extension SelectServerViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+//        return UITableView.automaticDimension
+        return 56
     }
     
     
@@ -127,6 +136,7 @@ extension SelectServerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let headerView = UIView()
+        
         return headerView
     }
 }
@@ -144,9 +154,9 @@ extension SelectServerViewController: UITableViewDelegate {
             headerView2.imageView.sd_setImage(with: url, completed: nil)
             
         }
-        headerView2.rightImageView.backgroundColor = .white
-        presenter.update(indexPath: indexPath)
         
+        headerView2.rightImageView.backgroundColor = .white
+//        presenter.update(indexPath: indexPath)
         
     }
     
@@ -160,7 +170,7 @@ extension SelectServerViewController: UITableViewDelegate {
 
 
 
-extension SelectServerViewController: MainViewPresenterProtocol {
+extension SelectServerViewController: SelectServerPresenterProtocol {
     
     func reloadData(string: String) {
         

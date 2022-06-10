@@ -7,30 +7,35 @@
 
 import UIKit
 
+
+
 class FirstViewController: UIViewController {
-    
-    let tljfs = "GOGOGO"
+ 
     let chooseSeverButton: UIButton = {
         
         let button = UIButton()
         button.backgroundColor = .purple
         button.layer.cornerRadius = 15
-        button.setTitle("sdlfj", for: .highlighted)
+        button.setTitle("Выберите сервер", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buttonPressed(_ :)), for: .touchUpInside)
 
         return button
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.backButtonDisplayMode = .minimal
 
+        
         view.addSubview(chooseSeverButton)
         configureButton()
         
+        
     }
+    
     
     private func configureButton() {
         NSLayoutConstraint.activate([
@@ -42,13 +47,14 @@ class FirstViewController: UIViewController {
         ])
     }
     
+
+    
     @objc func buttonPressed(_ sender: UIButton) {
                     
         let mainVC = SelectServerViewController()
         mainVC.modalPresentationStyle = .fullScreen
-        
         navigationController?.pushViewController(mainVC, animated: true)
-    
+        
     }
 }
 

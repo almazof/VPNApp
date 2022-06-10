@@ -87,14 +87,14 @@ class CustomView: UIView {
         imageView.widthAnchor.constraint(equalToConstant: 39),
         
         viewLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 13),
-        viewLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -13),
+//        viewLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -13),
         viewLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
         
         viewLocationLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 13),
-        viewLocationLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -13),
+//        viewLocationLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -13),
         viewLocationLabel.topAnchor.constraint(equalTo: viewLabel.bottomAnchor, constant: 5),
         viewLocationLabel.heightAnchor.constraint(equalToConstant: 12),
-        viewLocationLabel.widthAnchor.constraint(equalToConstant: 178),
+//        viewLocationLabel.widthAnchor.constraint(equalToConstant: 178),
         
         viewTimeDelayLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 13),
         viewTimeDelayLabel.topAnchor.constraint(equalTo: viewLocationLabel.bottomAnchor, constant: 3),

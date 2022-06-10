@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5FB09572284CE1C400337C7B /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB09571284CE1C400337C7B /* MainViewPresenter.swift */; };
+		5FB09572284CE1C400337C7B /* SelectServerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB09571284CE1C400337C7B /* SelectServerPresenter.swift */; };
 		5FBA71E9284550B8002983E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA71E8284550B8002983E9 /* AppDelegate.swift */; };
 		5FBA71EB284550B8002983E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA71EA284550B8002983E9 /* SceneDelegate.swift */; };
 		5FBA71ED284550B8002983E9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA71EC284550B8002983E9 /* FirstViewController.swift */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5FB09571284CE1C400337C7B /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
+		5FB09571284CE1C400337C7B /* SelectServerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectServerPresenter.swift; sourceTree = "<group>"; };
 		5FBA71E5284550B8002983E9 /* VPNApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBA71E8284550B8002983E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FBA71EA284550B8002983E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		5FB09570284CE1AE00337C7B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				5FB09571284CE1C400337C7B /* MainViewPresenter.swift */,
+				5FB09571284CE1C400337C7B /* SelectServerPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 				5FD4218C28460E1100F15FB7 /* NetworkService.swift in Sources */,
 				5FBA71EB284550B8002983E9 /* SceneDelegate.swift in Sources */,
 				5FD4218A28460DEA00F15FB7 /* SelectServerTableViewCell.swift in Sources */,
-				5FB09572284CE1C400337C7B /* MainViewPresenter.swift in Sources */,
+				5FB09572284CE1C400337C7B /* SelectServerPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
