@@ -9,8 +9,9 @@ import UIKit
 
 
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, ServerChangeDelegate {
  
+    
     let chooseSeverButton: UIButton = {
         
         let button = UIButton()
@@ -23,6 +24,18 @@ class FirstViewController: UIViewController {
         return button
     }()
     
+    let currentServerLabel: UILabel = {
+        
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .lightGray
+        label.text = "Current server"
+        label.textAlignment = .center
+        label.textColor = .white
+        
+        return label
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +44,14 @@ class FirstViewController: UIViewController {
 
         
         view.addSubview(chooseSeverButton)
+        view.addSubview(currentServerLabel)
         configureButton()
         
         
+    }
+    
+    func changeServer(server: String) {
+        currentServerLabel.text = server
     }
     
     
@@ -42,7 +60,12 @@ class FirstViewController: UIViewController {
             chooseSeverButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             chooseSeverButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             chooseSeverButton.heightAnchor.constraint(equalToConstant: 80),
-            chooseSeverButton.widthAnchor.constraint(equalToConstant: 350)
+            chooseSeverButton.widthAnchor.constraint(equalToConstant: 350),
+            
+            currentServerLabel.bottomAnchor.constraint(equalTo: chooseSeverButton.topAnchor, constant: -24),
+            currentServerLabel.leadingAnchor.constraint(equalTo: chooseSeverButton.leadingAnchor),
+            currentServerLabel.trailingAnchor.constraint(equalTo: chooseSeverButton.trailingAnchor),
+            currentServerLabel.heightAnchor.constraint(equalToConstant: 50)
             
         ])
     }
@@ -52,6 +75,9 @@ class FirstViewController: UIViewController {
     @objc func buttonPressed(_ sender: UIButton) {
                     
         let mainVC = SelectServerViewController()
+        
+        mainVC.delegate = self
+        
         mainVC.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(mainVC, animated: true)
         

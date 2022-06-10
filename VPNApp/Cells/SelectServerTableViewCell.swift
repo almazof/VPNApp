@@ -8,7 +8,9 @@
 import UIKit
 import SDWebImage
 
+
 class SelectServerTableViewCell: UITableViewCell {
+    
     
     let networkService = NetworkService()
     var searchResponse: SearchResponse? = nil

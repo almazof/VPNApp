@@ -9,7 +9,15 @@ import UIKit
 import SDWebImage
 
 
+protocol ServerChangeDelegate {
+    func changeServer(server: String)
+}
+
+
 class SelectServerViewController: UIViewController {
+    
+    var delegate: ServerChangeDelegate?
+    
     
     private let presenter = SelectServerPresenter()
     private var myTableView = UITableView()
@@ -157,7 +165,7 @@ extension SelectServerViewController: UITableViewDelegate {
         
         headerView2.rightImageView.backgroundColor = .white
 //        presenter.update(indexPath: indexPath)
-        
+        delegate?.changeServer(server: "\(headerView2.viewLabel.text ?? "")")
     }
     
     
