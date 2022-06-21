@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomView: UIView {
+class CurrentServerCustomView: UIView {
     
     
     let imageView: UIImageView = {

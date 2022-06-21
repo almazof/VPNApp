@@ -11,6 +11,7 @@ import SDWebImage
 
 protocol ServerChangeDelegate {
     func changeServer(server: String)
+//    func changeServer(_ sender: SelectServerViewController)
 }
 
 
@@ -24,7 +25,7 @@ class SelectServerViewController: UIViewController {
     let networkService = NetworkService()
     var searchResponse: SearchResponse? = nil
     
-    let headerView2 = CustomView()
+    let headerView2 = CurrentServerCustomView()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,6 +10,10 @@ import UIKit
 
 
 class FirstViewController: UIViewController, ServerChangeDelegate {
+//    func changeServer(_ sender: SelectServerViewController) {
+//        <#code#>
+//    }
+    
  
     
     let chooseSeverButton: UIButton = {
