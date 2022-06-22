@@ -19,7 +19,7 @@ class FirstViewController: UIViewController, ServerChangeDelegate {
     let chooseSeverButton: UIButton = {
         
         let button = UIButton()
-        button.backgroundColor = .purple
+        button.backgroundColor = #colorLiteral(red: 0.4310564399, green: 0.2845467925, blue: 0.9575057626, alpha: 1)
         button.layer.cornerRadius = 15
         button.setTitle("Выберите сервер", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false

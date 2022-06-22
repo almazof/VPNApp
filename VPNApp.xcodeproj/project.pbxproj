@@ -11,7 +11,7 @@
 		5FB095762858A61D00337C7B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB095752858A61C00337C7B /* SettingsViewController.swift */; };
 		5FB095942860873B00337C7B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB095932860873B00337C7B /* SettingsCell.swift */; };
 		5FB095962860CB5800337C7B /* PremiumSubscriptionCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB095952860CB5800337C7B /* PremiumSubscriptionCustomView.swift */; };
-		5FB095982860CD4C00337C7B /* VPNCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB095972860CD4C00337C7B /* VPNCustomView.swift */; };
+		5FB095982860CD4C00337C7B /* SubscribeScreenCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB095972860CD4C00337C7B /* SubscribeScreenCustomView.swift */; };
 		5FB0959A2860CE9F00337C7B /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB095992860CE9F00337C7B /* logo@2x.png */; };
 		5FB0959C2860DF4A00337C7B /* Vector.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB0959B2860DF4900337C7B /* Vector.png */; };
 		5FB095A52861E1B000337C7B /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FB095A12861E1B000337C7B /* Montserrat-Bold.ttf */; };
@@ -20,6 +20,10 @@
 		5FB095A82861E1B000337C7B /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FB095A42861E1B000337C7B /* Montserrat-SemiBold.ttf */; };
 		5FB095AA2862279400337C7B /* SubscribeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB095A92862279400337C7B /* SubscribeScreenViewController.swift */; };
 		5FB095AC2862E38E00337C7B /* SubscribeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB095AB2862E38E00337C7B /* SubscribeCell.swift */; };
+		5FB095AE2863251E00337C7B /* group.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB095AD2863251D00337C7B /* group.png */; };
+		5FB095B02863258800337C7B /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB095AF2863258700337C7B /* shield.png */; };
+		5FB095B22863259F00337C7B /* lightning.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB095B12863259F00337C7B /* lightning.png */; };
+		5FB095B4286325B700337C7B /* wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB095B3286325B700337C7B /* wifi.png */; };
 		5FBA71E9284550B8002983E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA71E8284550B8002983E9 /* AppDelegate.swift */; };
 		5FBA71EB284550B8002983E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA71EA284550B8002983E9 /* SceneDelegate.swift */; };
 		5FBA71ED284550B8002983E9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA71EC284550B8002983E9 /* FirstViewController.swift */; };
@@ -38,7 +42,7 @@
 		5FB095752858A61C00337C7B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5FB095932860873B00337C7B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		5FB095952860CB5800337C7B /* PremiumSubscriptionCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumSubscriptionCustomView.swift; sourceTree = "<group>"; };
-		5FB095972860CD4C00337C7B /* VPNCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNCustomView.swift; sourceTree = "<group>"; };
+		5FB095972860CD4C00337C7B /* SubscribeScreenCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeScreenCustomView.swift; sourceTree = "<group>"; };
 		5FB095992860CE9F00337C7B /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		5FB0959B2860DF4900337C7B /* Vector.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vector.png; sourceTree = "<group>"; };
 		5FB095A12861E1B000337C7B /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		5FB095A42861E1B000337C7B /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		5FB095A92862279400337C7B /* SubscribeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeScreenViewController.swift; sourceTree = "<group>"; };
 		5FB095AB2862E38E00337C7B /* SubscribeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeCell.swift; sourceTree = "<group>"; };
+		5FB095AD2863251D00337C7B /* group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group.png; sourceTree = "<group>"; };
+		5FB095AF2863258700337C7B /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
+		5FB095B12863259F00337C7B /* lightning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightning.png; sourceTree = "<group>"; };
+		5FB095B3286325B700337C7B /* wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi.png; sourceTree = "<group>"; };
 		5FBA71E5284550B8002983E9 /* VPNApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBA71E8284550B8002983E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FBA71EA284550B8002983E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +97,7 @@
 			children = (
 				5FD4219128464FCC00F15FB7 /* CurrentServerCustomView.swift */,
 				5FB095952860CB5800337C7B /* PremiumSubscriptionCustomView.swift */,
-				5FB095972860CD4C00337C7B /* VPNCustomView.swift */,
+				5FB095972860CD4C00337C7B /* SubscribeScreenCustomView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -127,6 +135,10 @@
 			children = (
 				5FB0959B2860DF4900337C7B /* Vector.png */,
 				5FB095992860CE9F00337C7B /* logo@2x.png */,
+				5FB095AD2863251D00337C7B /* group.png */,
+				5FB095AF2863258700337C7B /* shield.png */,
+				5FB095B12863259F00337C7B /* lightning.png */,
+				5FB095B3286325B700337C7B /* wifi.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -283,12 +295,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FB095A52861E1B000337C7B /* Montserrat-Bold.ttf in Resources */,
+				5FB095B02863258800337C7B /* shield.png in Resources */,
+				5FB095B4286325B700337C7B /* wifi.png in Resources */,
 				5FB095A62861E1B000337C7B /* Montserrat-ExtraBold.ttf in Resources */,
 				5FB0959C2860DF4A00337C7B /* Vector.png in Resources */,
+				5FB095AE2863251E00337C7B /* group.png in Resources */,
 				5FB095A72861E1B000337C7B /* Montserrat-Medium.ttf in Resources */,
 				5FBA71F5284550BD002983E9 /* LaunchScreen.storyboard in Resources */,
 				5FB0959A2860CE9F00337C7B /* logo@2x.png in Resources */,
 				5FB095A82861E1B000337C7B /* Montserrat-SemiBold.ttf in Resources */,
+				5FB095B22863259F00337C7B /* lightning.png in Resources */,
 				5FBA71F2284550BD002983E9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,7 +361,7 @@
 				5FD4218E28460E5200F15FB7 /* SearchResponse.swift in Sources */,
 				5FD4219228464FCC00F15FB7 /* CurrentServerCustomView.swift in Sources */,
 				5FBA71ED284550B8002983E9 /* FirstViewController.swift in Sources */,
-				5FB095982860CD4C00337C7B /* VPNCustomView.swift in Sources */,
+				5FB095982860CD4C00337C7B /* SubscribeScreenCustomView.swift in Sources */,
 				5FB095762858A61D00337C7B /* SettingsViewController.swift in Sources */,
 				5FD42188284606D100F15FB7 /* SelectServerViewController.swift in Sources */,
 				5FBA71E9284550B8002983E9 /* AppDelegate.swift in Sources */,
