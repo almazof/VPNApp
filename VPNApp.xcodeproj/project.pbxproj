@@ -18,6 +18,8 @@
 		5FB095A62861E1B000337C7B /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FB095A22861E1B000337C7B /* Montserrat-ExtraBold.ttf */; };
 		5FB095A72861E1B000337C7B /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FB095A32861E1B000337C7B /* Montserrat-Medium.ttf */; };
 		5FB095A82861E1B000337C7B /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FB095A42861E1B000337C7B /* Montserrat-SemiBold.ttf */; };
+		5FB095AA2862279400337C7B /* SubscribeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB095A92862279400337C7B /* SubscribeScreenViewController.swift */; };
+		5FB095AC2862E38E00337C7B /* SubscribeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB095AB2862E38E00337C7B /* SubscribeCell.swift */; };
 		5FBA71E9284550B8002983E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA71E8284550B8002983E9 /* AppDelegate.swift */; };
 		5FBA71EB284550B8002983E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA71EA284550B8002983E9 /* SceneDelegate.swift */; };
 		5FBA71ED284550B8002983E9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA71EC284550B8002983E9 /* FirstViewController.swift */; };
@@ -43,6 +45,8 @@
 		5FB095A22861E1B000337C7B /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		5FB095A32861E1B000337C7B /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		5FB095A42861E1B000337C7B /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		5FB095A92862279400337C7B /* SubscribeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeScreenViewController.swift; sourceTree = "<group>"; };
+		5FB095AB2862E38E00337C7B /* SubscribeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeCell.swift; sourceTree = "<group>"; };
 		5FBA71E5284550B8002983E9 /* VPNApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBA71E8284550B8002983E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FBA71EA284550B8002983E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 			children = (
 				5FD4218928460DEA00F15FB7 /* SelectServerTableViewCell.swift */,
 				5FB095932860873B00337C7B /* SettingsCell.swift */,
+				5FB095AB2862E38E00337C7B /* SubscribeCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				5FBA71EC284550B8002983E9 /* FirstViewController.swift */,
 				5FD42187284606D100F15FB7 /* SelectServerViewController.swift */,
 				5FB095752858A61C00337C7B /* SettingsViewController.swift */,
+				5FB095A92862279400337C7B /* SubscribeScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -344,10 +350,12 @@
 				5FD42188284606D100F15FB7 /* SelectServerViewController.swift in Sources */,
 				5FBA71E9284550B8002983E9 /* AppDelegate.swift in Sources */,
 				5FB095942860873B00337C7B /* SettingsCell.swift in Sources */,
+				5FB095AC2862E38E00337C7B /* SubscribeCell.swift in Sources */,
 				5FD4218C28460E1100F15FB7 /* NetworkService.swift in Sources */,
 				5FB095962860CB5800337C7B /* PremiumSubscriptionCustomView.swift in Sources */,
 				5FBA71EB284550B8002983E9 /* SceneDelegate.swift in Sources */,
 				5FD4218A28460DEA00F15FB7 /* SelectServerTableViewCell.swift in Sources */,
+				5FB095AA2862279400337C7B /* SubscribeScreenViewController.swift in Sources */,
 				5FB09572284CE1C400337C7B /* SelectServerPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

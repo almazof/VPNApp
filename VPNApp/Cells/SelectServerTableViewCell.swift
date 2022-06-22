@@ -18,7 +18,6 @@ class SelectServerTableViewCell: UITableViewCell {
     let blankView = UIView()
     lazy var topicPhoto = UIImageView()
     lazy var topicNameLabel = UILabel()
-//    lazy var topicStackView = UIStackView()
     private lazy var timeDelayLabel = UILabel()
     private lazy var ellipseImg = UIImageView()
   
@@ -50,11 +49,6 @@ class SelectServerTableViewCell: UITableViewCell {
             topicPhoto.layer.cornerRadius = 15
             topicPhoto.clipsToBounds = false
             
-//            topicStackView.translatesAutoresizingMaskIntoConstraints = false
-//            topicStackView.axis = .vertical
-////            topicStackView.backgroundColor = .systemMint
-////            topicStackView.alignment = .fill
-//            topicStackView.spacing = 0
             
             topicNameLabel.translatesAutoresizingMaskIntoConstraints = false
             topicNameLabel.font = UIFont(name: "Montserrat-Medium", size: 15)
@@ -77,7 +71,6 @@ class SelectServerTableViewCell: UITableViewCell {
             blankView.addSubview(timeDelayLabel)
             blankView.addSubview(topicNameLabel)
             blankView.addSubview(timeDelayLabel)
-//            blankView.addSubview(topicStackView)
             blankView.addSubview(ellipseImg)
             
             
@@ -104,11 +97,6 @@ class SelectServerTableViewCell: UITableViewCell {
                 timeDelayLabel.leadingAnchor.constraint(equalTo: topicPhoto.trailingAnchor, constant: 13),
                 timeDelayLabel.heightAnchor.constraint(equalToConstant: 10),
                 timeDelayLabel.widthAnchor.constraint(equalToConstant: 120),
-                
-//                topicStackView.heightAnchor.constraint(equalToConstant: 32),
-//                topicStackView.leadingAnchor.constraint(equalTo: topicPhoto.trailingAnchor, constant: 13),
-//                topicStackView.trailingAnchor.constraint(equalTo: ellipseImg.leadingAnchor, constant: -13),
-                
                 
                 ellipseImg.heightAnchor.constraint(equalToConstant: 20),
                 ellipseImg.widthAnchor.constraint(equalToConstant: 20),

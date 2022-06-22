@@ -12,6 +12,17 @@ class SettingsViewController: UIViewController {
     var settingsTableView = UITableView()
     var headerView2 = PremiumSubscriptionCustomView()
     
+    private lazy var buyPremiumButton: UIButton = {
+        
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.layer.cornerRadius = 15
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(buttonPressed(_ :)), for: .touchUpInside)
+
+        return button
+    }()
+    
     var data: [[SettingsCell.ViewModel]] = []
     
     override func viewDidLoad() {
@@ -19,15 +30,18 @@ class SettingsViewController: UIViewController {
         setup()
         view.backgroundColor = appColor
         title = "Настройки"
+
     }
 }
 
 extension SettingsViewController {
+    
     private func setup() {
         setupSettingsTableView()
-        //        setupHeaderTableView()
         setupFooterTableView()
         fetchData()
+        
+    
     }
     
     private func setupSettingsTableView() {
@@ -46,7 +60,8 @@ extension SettingsViewController {
             settingsTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             settingsTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             settingsTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            settingsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            settingsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+        
         ])
         
     }
@@ -62,20 +77,21 @@ extension SettingsViewController {
         footer.backgroundColor = appColor
         settingsTableView.tableFooterView = footer
 
-        let headerView = UIView()
-        footer.addSubview(headerView)
-        headerView.backgroundColor = .clear
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.addSubview(headerView2)
+        let footerView = UIView()
+        footer.addSubview(footerView)
+        footerView.backgroundColor = .clear
+        footerView.translatesAutoresizingMaskIntoConstraints = false
+        footerView.addSubview(headerView2)
+        footer.addSubview(buyPremiumButton)
         headerView2.translatesAutoresizingMaskIntoConstraints = false
         
-        let headerVPNView = UIImageView()
-        footer.addSubview(headerVPNView)
-        headerVPNView.backgroundColor = .clear
-        headerVPNView.translatesAutoresizingMaskIntoConstraints = false
+        let footerVPNView = UIImageView()
+        footer.addSubview(footerVPNView)
+        footerVPNView.backgroundColor = .clear
+        footerVPNView.translatesAutoresizingMaskIntoConstraints = false
         
         let vpnImage = UIImage(named: "logo@2x")
-        headerVPNView.image = vpnImage
+        footerVPNView.image = vpnImage
         
         let footerTitleLabel: UILabel = {
             let label = UILabel()
@@ -123,24 +139,29 @@ extension SettingsViewController {
         
         
         NSLayoutConstraint.activate([
-            headerView.leadingAnchor.constraint(equalTo: footer.leadingAnchor, constant: 15),
-            headerView.trailingAnchor.constraint(equalTo: footer.trailingAnchor, constant: -15),
-            headerView.topAnchor.constraint(equalTo: footer.topAnchor, constant: 15),
-            headerView.heightAnchor.constraint(equalToConstant: 70),
+            footerView.leadingAnchor.constraint(equalTo: footer.leadingAnchor, constant: 15),
+            footerView.trailingAnchor.constraint(equalTo: footer.trailingAnchor, constant: -15),
+            footerView.topAnchor.constraint(equalTo: footer.topAnchor, constant: 15),
+            footerView.heightAnchor.constraint(equalToConstant: 70),
             
-            headerView2.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            headerView2.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-            headerView2.topAnchor.constraint(equalTo: headerView.topAnchor),
-            headerView2.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
+            headerView2.leadingAnchor.constraint(equalTo: footerView.leadingAnchor),
+            headerView2.trailingAnchor.constraint(equalTo: footerView.trailingAnchor),
+            headerView2.topAnchor.constraint(equalTo: footerView.topAnchor),
+            headerView2.bottomAnchor.constraint(equalTo: footerView.bottomAnchor),
             
-            headerVPNView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 42),
-            headerVPNView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-            headerVPNView.widthAnchor.constraint(equalToConstant: 79),
-            headerVPNView.heightAnchor.constraint(equalToConstant: 79),
+            footerVPNView.topAnchor.constraint(equalTo: footerView.bottomAnchor, constant: 42),
+            footerVPNView.centerXAnchor.constraint(equalTo: footerView.centerXAnchor),
+            footerVPNView.widthAnchor.constraint(equalToConstant: 79),
+            footerVPNView.heightAnchor.constraint(equalToConstant: 79),
             
-            footerStackView.topAnchor.constraint(equalTo: headerVPNView.bottomAnchor, constant: 19),
-            footerStackView.centerXAnchor.constraint(equalTo: headerVPNView.centerXAnchor),
+            footerStackView.topAnchor.constraint(equalTo: footerVPNView.bottomAnchor, constant: 19),
+            footerStackView.centerXAnchor.constraint(equalTo: footerVPNView.centerXAnchor),
             
+            
+            buyPremiumButton.topAnchor.constraint(equalTo: headerView2.topAnchor),
+            buyPremiumButton.leadingAnchor.constraint(equalTo: headerView2.leadingAnchor),
+            buyPremiumButton.trailingAnchor.constraint(equalTo: headerView2.trailingAnchor),
+            buyPremiumButton.bottomAnchor.constraint(equalTo: headerView2.bottomAnchor)
             
             
         ])
@@ -193,10 +214,7 @@ extension SettingsViewController: UITableViewDataSource {
 
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        for family in UIFont.familyNames.sorted() {
-          let names = UIFont.fontNames(forFamilyName: family)
-          print("Family: \(family) Font names: \(names)")
-        }
+        tableView.deselectRow(at: indexPath, animated: true)
 
     }
     
@@ -207,7 +225,7 @@ extension SettingsViewController {
     private func fetchData() {
         
         
-        let cell1 = [SettingsCell.ViewModel(cellType: .Account, cellName: "Аккаунт")]
+        let cell1 = [SettingsCell.ViewModel(cellType: .Account, cellName: "Аккаунт:")]
         let cell2 = [SettingsCell.ViewModel(cellType: .Notifications, cellName: "Уведомления"), SettingsCell.ViewModel(cellType: .Contact, cellName: "Связаться с нами"), SettingsCell.ViewModel(cellType: .Privacy, cellName: "Политика конфиденциальности")]
     
         data.append(cell1)
@@ -215,3 +233,17 @@ extension SettingsViewController {
    
     }
 }
+
+extension SettingsViewController {
+    
+@objc func buttonPressed(_ sender: UIButton) {
+    
+    let subscribeVC = SubscribeScreenViewController()
+        
+    subscribeVC.modalPresentationStyle = .fullScreen
+    navigationController?.pushViewController(subscribeVC, animated: true)
+
+
+     }
+}
+

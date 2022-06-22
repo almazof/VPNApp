@@ -26,11 +26,13 @@ class SettingsCell: UITableViewCell {
     
     
     
-    let blankView = UIView()
-    let cellStackView = UIStackView()
-    let titleLabel = UILabel()
-    let detailLabel = UILabel()
-    let switcher = UISwitch()
+    private lazy var blankView = UIView()
+    private lazy var cellStackView = UIStackView()
+    private lazy var titleLabel = UILabel()
+    private lazy var detailLabel = UILabel()
+    private lazy var switcher = UISwitch()
+    private lazy var chevronImageView = UIImageView()
+    
     
     static let reuseID = "SettingsTableViewCell"
 
@@ -55,6 +57,7 @@ extension SettingsCell {
         blankView.backgroundColor = .white
         blankView.layer.cornerRadius = 15
         
+        
         cellStackView.translatesAutoresizingMaskIntoConstraints = false
         cellStackView.alignment = .fill
         cellStackView.distribution = .fill
@@ -62,26 +65,26 @@ extension SettingsCell {
         cellStackView.spacing = 3
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        titleLabel.font = UIFont(name: "Montserrat-Medium", size: 15)
         titleLabel.adjustsFontForContentSizeCategory = true
         
         detailLabel.translatesAutoresizingMaskIntoConstraints = false
-        detailLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        detailLabel.font = UIFont(name: "Montserrat-SemiBold", size: 15)
         detailLabel.adjustsFontForContentSizeCategory = true
         detailLabel.textColor = #colorLiteral(red: 0.4310564399, green: 0.2845467925, blue: 0.9575057626, alpha: 1)
         
         switcher.translatesAutoresizingMaskIntoConstraints = false
         switcher.isOn = true
         switcher.onTintColor = #colorLiteral(red: 0.4310564399, green: 0.2845467925, blue: 0.9575057626, alpha: 1)
-        
+     
         cellStackView.addArrangedSubview(titleLabel)
         cellStackView.addArrangedSubview(detailLabel)
-        cellStackView.addArrangedSubview(switcher)
+
         
         blankView.addSubview(cellStackView)
        
         contentView.addSubview(blankView)
-        
+        contentView.addSubview(switcher)
         
     }
     
@@ -97,8 +100,11 @@ extension SettingsCell {
             
             cellStackView.topAnchor.constraint(equalTo: blankView.topAnchor),
             cellStackView.leadingAnchor.constraint(equalTo: blankView.leadingAnchor, constant: 20),
-            cellStackView.trailingAnchor.constraint(equalTo: blankView.trailingAnchor),
+            cellStackView.trailingAnchor.constraint(equalTo: blankView.trailingAnchor, constant: -20),
             cellStackView.bottomAnchor.constraint(equalTo: blankView.bottomAnchor),
+            
+            switcher.centerYAnchor.constraint(equalTo: blankView.centerYAnchor),
+            switcher.trailingAnchor.constraint(equalTo: blankView.trailingAnchor, constant: -16)
             
             
             
@@ -117,12 +123,18 @@ extension SettingsCell {
         case .Account:
             switcher.isHidden = true
             detailLabel.text = "Бесплатная версия"
+            
         case .Notifications:
             switcher.isOn = true
+            
         case .Contact:
             switcher.isHidden = true
+            self.accessoryType = .disclosureIndicator
+            
         case .Privacy:
             switcher.isHidden = true
+            self.accessoryType = .disclosureIndicator
+
         }
     }
     
