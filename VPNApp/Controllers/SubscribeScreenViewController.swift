@@ -18,6 +18,13 @@ class SubscribeScreenViewController: UIViewController {
         let price: String
     }
     
+    lazy var closeBarButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(title: "X", style: .plain, target: self, action: #selector(closeTapped))
+        barButtonItem.tintColor = .label
+
+        return barButtonItem
+    }()
+    
     
     let articles: [CellModel] = [
         CellModel(month: "1 месяц", discount: "Полная стоимость", price: "350,00 ₽"),
@@ -41,6 +48,8 @@ extension SubscribeScreenViewController {
         setupSubscribeTableView()
         setupHeader()
         setupFooter()
+        
+        navigationItem.rightBarButtonItem = closeBarButtonItem
     
     }
     
@@ -254,4 +263,11 @@ extension SubscribeScreenViewController: UITableViewDataSource {
         return 73
     }
     
+}
+
+extension SubscribeScreenViewController {
+    
+    @objc func closeTapped() {
+        navigationController?.popViewController(animated: true)
+    }
 }
