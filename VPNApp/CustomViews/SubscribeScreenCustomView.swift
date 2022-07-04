@@ -59,7 +59,7 @@ class SubscribeScreenCustomView: UIView {
     }
   
   private func setupView() {
-    backgroundColor = appColor
+      backgroundColor = .appColor
       
       addSubview(blankView)
       addSubview(imageView)

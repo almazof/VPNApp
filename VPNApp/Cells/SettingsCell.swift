@@ -51,7 +51,7 @@ class SettingsCell: UITableViewCell {
 extension SettingsCell {
     private func setup() {
         
-        self.backgroundColor = appColor
+        self.backgroundColor = .appColor
         
         blankView.translatesAutoresizingMaskIntoConstraints = false
         blankView.backgroundColor = .white

@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class FirstViewController: UIViewController, ServerChangeDelegate {
+class FirstViewController: ViewController, ServerChangeDelegate {
 //    func changeServer(_ sender: SelectServerViewController) {
 //        <#code#>
 //    }
@@ -43,10 +43,6 @@ class FirstViewController: UIViewController, ServerChangeDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        navigationItem.backButtonDisplayMode = .minimal
-
-        
         view.addSubview(chooseSeverButton)
         view.addSubview(currentServerLabel)
         configureButton()

@@ -34,7 +34,7 @@ class SubscribeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = appColor
+        view.backgroundColor = .appColor
         setup()
         
     }
@@ -54,7 +54,7 @@ extension SubscribeScreenViewController {
     }
     
     private func setupSubscribeTableView() {
-        subscribeTableView.backgroundColor = appColor
+        subscribeTableView.backgroundColor = .appColor
         
         subscribeTableView.delegate = self
         subscribeTableView.dataSource = self
@@ -77,7 +77,7 @@ extension SubscribeScreenViewController {
     
     private func setupHeader() {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 400))
-        header.backgroundColor = appColor
+        header.backgroundColor = .appColor
         subscribeTableView.tableHeaderView = header
         
         lazy var stackView = UIStackView()
@@ -182,7 +182,7 @@ extension SubscribeScreenViewController {
     
     private func setupFooter() {
         let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 173))
-        footer.backgroundColor = appColor
+        footer.backgroundColor = .appColor
         subscribeTableView.tableFooterView = footer
         
         lazy var buyPremium: UIButton = {

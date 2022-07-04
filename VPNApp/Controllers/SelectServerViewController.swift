@@ -15,13 +15,10 @@ protocol ServerChangeDelegate {
 }
 
 
-class SelectServerViewController: UIViewController {
-    
+class SelectServerViewController: UITableViewController {
     var delegate: ServerChangeDelegate?
     
-    
     private let presenter = SelectServerPresenter()
-    private var myTableView = UITableView()
     let networkService = NetworkService()
     var searchResponse: SearchResponse? = nil
     
@@ -30,8 +27,6 @@ class SelectServerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.delegate = self
-        
-        view.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
         title = "Выберите сервер"
         setup()
         
@@ -40,7 +35,7 @@ class SelectServerViewController: UIViewController {
             switch result {
             case .success(let searchResponse):
                 self?.searchResponse = searchResponse
-                self?.myTableView.reloadData()
+                self?.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
@@ -52,68 +47,29 @@ class SelectServerViewController: UIViewController {
 
 extension SelectServerViewController {
     
-    
     private func setup() {
-        setupTableView()
+        tableView.register(SelectServerTableViewCell.self, forCellReuseIdentifier: "MyCell")
+        
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+//        headerView.addSubview(headerView2)
+//        headerView2.translatesAutoresizingMaskIntoConstraints = false
+        setupHeader(headerView: headerView, height: 110)
+        
+//        NSLayoutConstraint.activate([
+//            headerView2.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 15),
+//            headerView2.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -15),
+//            headerView2.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 10),
+//            headerView2.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
+//        ])
     }
     
-    private func setupTableView() {
-        myTableView.dataSource = self
-        myTableView.delegate = self
-        
-        myTableView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(myTableView)
-        
-        myTableView.register(SelectServerTableViewCell.self, forCellReuseIdentifier: "MyCell")
-        myTableView.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
-        
-        myTableView.separatorStyle = .none
-        
-        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 110))
-        header.translatesAutoresizingMaskIntoConstraints = false
-        myTableView.tableHeaderView = header
-        header.backgroundColor = .clear
-        let headerView = UIView()
-        header.addSubview(headerView)
-        headerView.backgroundColor = .clear
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.addSubview(headerView2)
-        headerView2.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            
-            header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            header.heightAnchor.constraint(equalToConstant: 110),
-            
-            
-            headerView.leadingAnchor.constraint(equalTo: header.leadingAnchor, constant: 15),
-            headerView.trailingAnchor.constraint(equalTo: header.trailingAnchor, constant: -15),
-            headerView.topAnchor.constraint(equalTo: header.topAnchor, constant: 15),
-            headerView.heightAnchor.constraint(equalToConstant: 70),
-            
-            headerView2.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            headerView2.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-            headerView2.topAnchor.constraint(equalTo: headerView.topAnchor),
-            headerView2.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
-        ])
-        
-        
-        
-        
-        NSLayoutConstraint.activate([
-            myTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            myTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            myTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            myTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            
-        ])
-    }
 }
 
-extension SelectServerViewController: UITableViewDataSource {
+//MARK: - DataSource
+extension SelectServerViewController {
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! SelectServerTableViewCell
         let topic = searchResponse?.result?[indexPath.section]
         cell.topicNameLabel.text = topic?.country
@@ -123,12 +79,12 @@ extension SelectServerViewController: UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return searchResponse?.result?.count ?? 1
     }
     
@@ -151,7 +107,7 @@ extension SelectServerViewController: UITableViewDataSource {
 }
 
 
-extension SelectServerViewController: UITableViewDelegate {
+extension SelectServerViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -168,15 +124,7 @@ extension SelectServerViewController: UITableViewDelegate {
 //        presenter.update(indexPath: indexPath)
         delegate?.changeServer(server: "\(headerView2.viewLabel.text ?? "")")
     }
-    
-    
 }
-
-
-
-
-
-
 
 
 extension SelectServerViewController: SelectServerPresenterProtocol {

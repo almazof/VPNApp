@@ -28,7 +28,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        view.backgroundColor = appColor
+        view.backgroundColor = .appColor
         title = "Настройки"
 
     }
@@ -45,7 +45,7 @@ extension SettingsViewController {
     }
     
     private func setupSettingsTableView() {
-        settingsTableView.backgroundColor = appColor
+        settingsTableView.backgroundColor = .appColor
         
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
@@ -74,7 +74,7 @@ extension SettingsViewController {
     
     private func setupFooterTableView() {
         let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 300))
-        footer.backgroundColor = appColor
+        footer.backgroundColor = .appColor
         settingsTableView.tableFooterView = footer
 
         let footerView = UIView()

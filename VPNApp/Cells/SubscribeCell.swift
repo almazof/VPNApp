@@ -27,7 +27,7 @@ class SubscribeCell: UITableViewCell {
         layout()
         
         self.backgroundColor = .clear
-        contentView.backgroundColor = appColor
+        contentView.backgroundColor = .appColor
         
     }
     required init?(coder: NSCoder) {
@@ -38,7 +38,7 @@ class SubscribeCell: UITableViewCell {
     extension SubscribeCell {
         private func setup() {
             blankView.translatesAutoresizingMaskIntoConstraints = false
-            blankView.backgroundColor = appColor
+            blankView.backgroundColor = .appColor
             blankView.layer.cornerRadius = 15
             blankView.layer.borderWidth = 2
        
